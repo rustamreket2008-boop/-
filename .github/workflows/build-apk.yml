@@ -1,0 +1,66 @@
+name: 🚀 English Тоҷикӣ - Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: 📱 Build Android APK
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1. Гирифтани код аз GitHub
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      # 2. Насб кардани Java
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # 3. Насб кардани Gradle
+      - name: 🔧 Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      # 4. Build кардани Android APK
+      - name: 🏗️ Build APK
+        run: |
+          chmod +x gradlew 2>/dev/null || true
+          if [ -f "./gradlew" ]; then
+            ./gradlew assembleDebug
+          else
+            gradle assembleDebug
+          fi
+
+      # 5. Намоиши файлҳои сохташуда
+      - name: 📂 Check APK
+        run: |
+          echo "APK files:"
+          find app/build/outputs -type f
+
+      # 6. Баровардани APK ҳамчун Artifact
+      - name: 📦 Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: English-Tajik-Dictionary-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+      # 7. Агар APK сохта шуд
+      - name: ✅ Success
+        run: |
+          echo "================================="
+          echo " APK READY!"
+          echo " English Тоҷикӣ"
+          echo "================================="
