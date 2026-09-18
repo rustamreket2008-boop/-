@@ -1,8 +1,11 @@
 # English Тоҷикӣ 🇬🇧🇹🇯
-1000 калима, ҷустуҷӯ, гурӯҳҳо, ⭐ дӯстдошта, 🌙 dark mode ва 🔊 талаффуз. Барнома offline кор мекунад.
 
-## APK бо GitHub
-1. Файлҳои repository-ро upload кун.
-2. **Actions** → **Build APK** → **Run workflow**.
-3. Баъди build аз **Artifacts** `English-Tajik-Dictionary-APK`-ро download кун.
-4. Дар дохилаш `app-debug.apk` аст.
+Луғати offline англисӣ → тоҷикӣ бо 1000 калима, ҷустуҷӯ, дӯстдошта, dark mode ва талаффуз.
+
+## Build APK дар GitHub Actions
+
+1. Ҳамаи файлҳои ин repository-ро ба GitHub гузоред.
+2. Ба **Actions** → **Build APK** дароед.
+3. **Run workflow**-ро пахш кунед ё ба `main` push кунед.
+4. Пас аз сабз шудани workflow, дар **Artifacts** файли `English-Tajik-Dictionary-APK` пайдо мешавад.
+5. ZIP-ро download кунед; дохилаш `app-debug.apk` мебошад.
