@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loadPart1();
-        loadPart2();
+        loadFromAssets();
         RecyclerView rv = findViewById(R.id.recyclerView);
         EditText search = findViewById(R.id.searchEdit);
         adapter = new WordAdapter(allWords);
@@ -39,144 +41,27 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s){}
         });
     }
-    private void loadPart1(){
-        allWords.add(new String[]{"hello","салом"});
-        allWords.add(new String[]{"goodbye","хайр"});
-        allWords.add(new String[]{"thank you","ташаккур"});
-        allWords.add(new String[]{"please","марҳамат"});
-        allWords.add(new String[]{"yes","ҳа"});
-        allWords.add(new String[]{"no","не"});
-        allWords.add(new String[]{"water","об"});
-        allWords.add(new String[]{"bread","нон"});
-        allWords.add(new String[]{"book","китоб"});
-        allWords.add(new String[]{"school","мактаб"});
-        allWords.add(new String[]{"teacher","омӯзгор"});
-        allWords.add(new String[]{"student","хонанда"});
-        allWords.add(new String[]{"friend","дӯст"});
-        allWords.add(new String[]{"family","оила"});
-        allWords.add(new String[]{"mother","модар"});
-        allWords.add(new String[]{"father","падар"});
-        allWords.add(new String[]{"house","хона"});
-        allWords.add(new String[]{"time","вақт"});
-        allWords.add(new String[]{"day","рӯз"});
-        allWords.add(new String[]{"night","шаб"});
-        allWords.add(new String[]{"love","ишқ"});
-        allWords.add(new String[]{"work","кор"});
-        allWords.add(new String[]{"life","ҳаёт"});
-        allWords.add(new String[]{"world","ҷаҳон"});
-        allWords.add(new String[]{"food","хӯрок"});
-        allWords.add(new String[]{"city","шаҳр"});
-        allWords.add(new String[]{"language","забон"});
-        allWords.add(new String[]{"learn","омӯхтан"});
-        allWords.add(new String[]{"today","имрӯз"});
-        allWords.add(new String[]{"money","пул"});
-        allWords.add(new String[]{"market","бозор"});
-        allWords.add(new String[]{"tea","чой"});
-        allWords.add(new String[]{"airport","фурудгоҳ"});
-        allWords.add(new String[]{"dictionary","луғат"});
-        allWords.add(new String[]{"big","калон"});
-        allWords.add(new String[]{"small","хурд"});
-        allWords.add(new String[]{"good","хуб"});
-        allWords.add(new String[]{"bad","бад"});
-        allWords.add(new String[]{"new","нав"});
-        allWords.add(new String[]{"old","кӯҳна"});
-        allWords.add(new String[]{"beautiful","зебо"});
-        allWords.add(new String[]{"easy","осон"});
-        allWords.add(new String[]{"difficult","душвор"});
-        allWords.add(new String[]{"fast","тез"});
-        allWords.add(new String[]{"slow","оҳиста"});
-        allWords.add(new String[]{"apple","себ"});
-        allWords.add(new String[]{"sun","офтоб"});
-        allWords.add(new String[]{"moon","моҳ"});
-        allWords.add(new String[]{"star","ситора"});
-        allWords.add(new String[]{"sky","осмон"});
-        allWords.add(new String[]{"dog","саг"});
-        allWords.add(new String[]{"cat","гурба"});
-        allWords.add(new String[]{"heart","дил"});
-        allWords.add(new String[]{"hand","даст"});
-        allWords.add(new String[]{"head","сар"});
-        allWords.add(new String[]{"eye","чашм"});
-        allWords.add(new String[]{"morning","субҳ"});
-        allWords.add(new String[]{"evening","бегоҳ"});
-        allWords.add(new String[]{"tomorrow","фардо"});
-        allWords.add(new String[]{"yesterday","дируз"});
-        allWords.add(new String[]{"road","роҳ"});
-        allWords.add(new String[]{"car","мошин"});
-        allWords.add(new String[]{"phone","телефон"});
-        allWords.add(new String[]{"computer","компютер"});
-        allWords.add(new String[]{"internet","интернет"});
-        allWords.add(new String[]{"happy","хушбахт"});
-        allWords.add(new String[]{"sad","ғамгин"});
-        allWords.add(new String[]{"health","саломатӣ"});
-        allWords.add(new String[]{"doctor","духтур"});
-        allWords.add(new String[]{"hospital","беморхона"});
-        allWords.add(new String[]{"music","мусиқӣ"});
-        allWords.add(new String[]{"song","суруд"});
-        allWords.add(new String[]{"name","ном"});
-        allWords.add(new String[]{"dream","орзу"});
-        allWords.add(new String[]{"peace","сулҳ"});
-        allWords.add(new String[]{"hope","умед"});
-        allWords.add(new String[]{"knowledge","дониш"});
-        allWords.add(new String[]{"light","нур"});
-        allWords.add(new String[]{"dark","торик"});
-        allWords.add(new String[]{"fire","оташ"});
-        allWords.add(new String[]{"river","дарё"});
-        allWords.add(new String[]{"mountain","кӯҳ"});
-        allWords.add(new String[]{"winter","зимистон"});
-        allWords.add(new String[]{"summer","тобистон"});
-        allWords.add(new String[]{"spring","баҳор"});
-        allWords.add(new String[]{"autumn","тирамоҳ"});
-        allWords.add(new String[]{"snow","барф"});
-        allWords.add(new String[]{"rain","борон"});
-        allWords.add(new String[]{"wind","бод"});
-        allWords.add(new String[]{"flower","гул"});
-        allWords.add(new String[]{"tree","дарахт"});
-        allWords.add(new String[]{"garden","боғ"});
-        allWords.add(new String[]{"door","дар"});
-        allWords.add(new String[]{"window","тиреза"});
-        allWords.add(new String[]{"key","калид"});
-        allWords.add(new String[]{"pen","қалам"});
-        allWords.add(new String[]{"paper","коғаз"});
-        allWords.add(new String[]{"coffee","қаҳва"});
-        allWords.add(new String[]{"email","почта"});
-        allWords.add(new String[]{"football","футбол"});
-        allWords.add(new String[]{"fruit","мева"});
-        allWords.add(new String[]{"gift","тӯҳфа"});
-        allWords.add(new String[]{"juice","шарбат"});
-        allWords.add(new String[]{"laptop","ноутбук"});
-        allWords.add(new String[]{"library","китобхона"});
-        allWords.add(new String[]{"meat","гӯшт"});
-        allWords.add(new String[]{"milk","шир"});
-        allWords.add(new String[]{"rice","биринҷ"});
-        allWords.add(new String[]{"salt","намак"});
-        allWords.add(new String[]{"ticket","чипта"});
-        allWords.add(new String[]{"tomato","помидор"});
-        allWords.add(new String[]{"vegetable","сабзавот"});
-        allWords.add(new String[]{"about","дар бораи"});
-        allWords.add(new String[]{"above","боло"});
-        allWords.add(new String[]{"action","амал"});
-        allWords.add(new String[]{"activity","фаъолият"});
-        allWords.add(new String[]{"address","суроға"});
-        allWords.add(new String[]{"after","баъд"});
-        allWords.add(new String[]{"again","боз"});
-        allWords.add(new String[]{"against","зидди"});
-        allWords.add(new String[]{"age","синну сол"});
-        allWords.add(new String[]{"air","ҳаво"});
-        allWords.add(new String[]{"all","ҳама"});
-        allWords.add(new String[]{"allow","иҷозат додан"});
-        allWords.add(new String[]{"almost","қариб"});
-        allWords.add(new String[]{"alone","танҳо"});
-        allWords.add(new String[]{"along","дар баробари"});
-        allWords.add(new String[]{"already","аллакай"});
-        allWords.add(new String[]{"also","ҳамчунин"});
-        allWords.add(new String[]{"always","ҳамеша"});
-        allWords.add(new String[]{"among","байни"});
-        allWords.add(new String[]{"amount","маблағ"});
-        allWords.add(new String[]{"animal","ҳайвон"});
-        allWords.add(new String[]{"another","дигар"});
-        allWords.add(new String[]{"answer","ҷавоб"});
-        allWords.add(new String[]{"any","ҳар"});
-        allWords.add(new String[]{"appear","пайдо шудан"});
-        allWords.add(new String[]{"area","минтақа"});
-        allWords.add(new String[]{"arm","даст"});
-        allWords.add(new String[]{"around","атроф"});
+    private void loadFromAssets(){
+        try{
+            InputStream is = getAssets().open("dictionary.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String json = new String(buffer,"UTF-8");
+            JSONArray arr = new JSONArray(json);
+            for(int i=0;i<arr.length();i++){
+                JSONObject o = arr.getJSONObject(i);
+                allWords.add(new String[]{o.getString("en"),o.getString("tj")});
+            }
+        }catch(Exception e){ e.printStackTrace(); }
+    }
+    class WordAdapter extends RecyclerView.Adapter<WordAdapter.VH>{
+        List<String[]> items; WordAdapter(List<String[]> i){items=i;}
+        void update(List<String[]> n){items=n; notifyDataSetChanged();}
+        class VH extends RecyclerView.ViewHolder{TextView en,tj; VH(View v){super(v); en=v.findViewById(R.id.enText); tj=v.findViewById(R.id.tjText);}}
+        public VH onCreateViewHolder(ViewGroup p,int t){View v=LayoutInflater.from(p.getContext()).inflate(R.layout.item_word,p,false); return new VH(v);}
+        public void onBindViewHolder(VH h,int pos){h.en.setText(items.get(pos)[0]); h.tj.setText(items.get(pos)[1]);}
+        public int getItemCount(){return items.size();}
+    }
+}
