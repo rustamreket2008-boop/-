@@ -1,14 +1,47 @@
-package tj.rustam.englishtajik;
-import android.app.Activity;
-import android.os.Bundle;
-import android.widget.TextView;
-public class MainActivity extends Activity {
-@Override
-protected void onCreate(Bundle b) {
-super.onCreate(b);
-TextView t=new TextView(this);
-t.setText("Salom Rustam! Build sabz shud! 700 kalima tayyor!");
-t.setTextSize(24);
-setContentView(t);
-}
-}
+[
+{"en":"hello","tj":"салом"},
+{"en":"goodbye","tj":"хайр"},
+{"en":"thank you","tj":"ташаккур"},
+{"en":"please","tj":"марҳамат"},
+{"en":"yes","tj":"ҳа"},
+{"en":"no","tj":"не"},
+{"en":"water","tj":"об"},
+{"en":"bread","tj":"нон"},
+{"en":"book","tj":"китоб"},
+{"en":"school","tj":"мактаб"},
+{"en":"teacher","tj":"омӯзгор"},
+{"en":"student","tj":"хонанда"},
+{"en":"friend","tj":"дӯст"},
+{"en":"family","tj":"оила"},
+{"en":"mother","tj":"модар"},
+{"en":"father","tj":"падар"},
+{"en":"house","tj":"хона"},
+{"en":"time","tj":"вақт"},
+{"en":"day","tj":"рӯз"},
+{"en":"night","tj":"шаб"},
+{"en":"love","tj":"ишқ"},
+{"en":"work","tj":"кор"},
+{"en":"life","tj":"ҳаёт"},
+{"en":"world","tj":"ҷаҳон"},
+{"en":"food","tj":"хӯрок"},
+{"en":"city","tj":"шаҳр"},
+{"en":"language","tj":"забон"},
+{"en":"learn","tj":"омӯхтан"},
+{"en":"today","tj":"имрӯз"},
+{"en":"money","tj":"пул"},
+{"en":"market","tj":"бозор"},
+{"en":"tea","tj":"чой"},
+{"en":"airport","tj":"фурудгоҳ"},
+{"en":"dictionary","tj":"луғат"},
+{"en":"big","tj":"калон"},
+{"en":"small","tj":"хурд"},
+{"en":"good","tj":"хуб"},
+{"en":"bad","tj":"бад"},
+{"en":"new","tj":"нав"},
+{"en":"old","tj":"кӯҳна"},
+{"en":"beautiful","tj":"зебо"},
+{"en":"easy","tj":"осон"},
+{"en":"difficult","tj":"душвор"},
+{"en":"fast","tj":"тез"},
+{"en":"slow","tj":"оҳиста"}
+]
