@@ -1,14 +1,14 @@
 package tj.rustam.englishtajik;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 @Override
 protected void onCreate(Bundle b) {
 super.onCreate(b);
 TextView t=new TextView(this);
-t.setText("Салом Рустам! Build сабз шуд!");
-t.setTextSize(22);
+t.setText("Salom Rustam! Build sabz shud! 700 kalima tayyor!");
+t.setTextSize(24);
 setContentView(t);
 }
 }
