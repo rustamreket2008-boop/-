@@ -1,5 +1,19 @@
-plugins { id 'com.android.application' }
+plugins {
+    id("com.android.application")
+}
+
 android {
- compileSdk 34
- defaultConfig { applicationId "tj.rustam.englishtajik"; minSdk 21; targetSdk 34 }
+    namespace = "com.example.dictionary"
+    compileSdk = 35
+
+    defaultConfig {
+        applicationId = "com.example.dictionary"
+        minSdk = 23
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0"
+    }
+}
+
+dependencies {
 }
