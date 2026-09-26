@@ -1,179 +1,322 @@
 package com.example.dictionary;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.graphics.Color;
-import android.view.Gravity;
-import android.widget.*;
-import java.util.*;
+import java.util.HashMap;
 
-public class MainActivity extends Activity {
+public class DictionaryData {
 
-    EditText search;
-    TextView result;
-    HashMap<String, String> dictionary = new HashMap<>();
+    private static final HashMap<String, String> words = new HashMap<>();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    static {
 
-        createDictionary();
+        words.put("hello", "салом");
+        words.put("goodbye", "хайр");
+        words.put("yes", "ҳа");
+        words.put("no", "не");
+        words.put("please", "лутфан");
+        words.put("thanks", "ташаккур");
+        words.put("sorry", "бахшиш");
+        words.put("welcome", "хуш омадед");
+        words.put("friend", "дӯст");
+        words.put("family", "оила");
 
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setPadding(25, 30, 25, 25);
+        words.put("mother", "модар");
+        words.put("father", "падар");
+        words.put("brother", "бародар");
+        words.put("sister", "хоҳар");
+        words.put("son", "писар");
+        words.put("daughter", "духтар");
+        words.put("child", "кӯдак");
+        words.put("man", "мард");
+        words.put("woman", "зан");
+        words.put("boy", "писар");
+        words.put("girl", "духтар");
+        words.put("baby", "тифл");
+        words.put("parent", "волид");
+        words.put("parents", "волидон");
+        words.put("husband", "шавҳар");
+        words.put("wife", "ҳамсар");
+        words.put("uncle", "амак");
+        words.put("aunt", "хола");
+        words.put("cousin", "амакбача");
+        words.put("grandfather", "бобо");
+        words.put("grandmother", "бибӣ");
+        words.put("family", "оила");
+        words.put("people", "мардум");
+        words.put("person", "шахс");
+        words.put("name", "ном");
+        words.put("age", "синну сол");
+        words.put("friendship", "дӯстӣ");
+        words.put("love", "муҳаббат");
+        words.put("help", "ёрӣ");
+        words.put("problem", "мушкилот");
 
-        TextView title = new TextView(this);
-        title.setText("📚 English — Тоҷикӣ");
-        title.setTextSize(26);
-        title.setGravity(Gravity.CENTER);
-        title.setPadding(0, 10, 0, 25);
+        words.put("school", "мактаб");
+        words.put("teacher", "муаллим");
+        words.put("student", "хонанда");
+        words.put("class", "синф");
+        words.put("book", "китоб");
+        words.put("pen", "қалам");
+        words.put("pencil", "қалам");
+        words.put("paper", "коғаз");
+        words.put("lesson", "дарс");
+        words.put("homework", "вазифаи хонагӣ");
+        words.put("question", "савол");
+        words.put("answer", "ҷавоб");
+        words.put("exam", "имтиҳон");
+        words.put("test", "санҷиш");
+        words.put("subject", "фан");
+        words.put("science", "илм");
+        words.put("history", "таърих");
+        words.put("geography", "ҷуғрофия");
+        words.put("mathematics", "математика");
+        words.put("language", "забон");
+        words.put("word", "калима");
+        words.put("sentence", "ҷумла");
+        words.put("letter", "ҳарф");
+        words.put("number", "рақам");
+        words.put("schoolbag", "ҷузвдон");
+        words.put("desk", "миз");
+        words.put("chair", "курсӣ");
+        words.put("board", "тахта");
+        words.put("library", "китобхона");
+        words.put("university", "донишгоҳ");
+        words.put("college", "коллеҷ");
 
-        search = new EditText(this);
-        search.setHint("Калимаи англисиро навис...");
-        search.setTextSize(18);
+        words.put("house", "хона");
+        words.put("home", "манзил");
+        words.put("room", "ҳуҷра");
+        words.put("door", "дар");
+        words.put("window", "тиреза");
+        words.put("wall", "девор");
+        words.put("floor", "фарш");
+        words.put("roof", "бом");
+        words.put("bed", "кат");
+        words.put("kitchen", "ошхона");
+        words.put("bathroom", "ҳаммом");
+        words.put("garden", "боғ");
+        words.put("yard", "ҳавлӣ");
+        words.put("key", "калид");
+        words.put("light", "чароғ");
+        words.put("lamp", "чароғ");
+        words.put("clock", "соат");
+        words.put("television", "телевизор");
+        words.put("computer", "компютер");
+        words.put("phone", "телефон");
+        words.put("charger", "пуркунандаи барқ");
+        words.put("bag", "сумка");
+        words.put("box", "қуттӣ");
+        words.put("cup", "пиёла");
+        words.put("glass", "истакон");
+        words.put("plate", "табақ");
+        words.put("spoon", "қошуқ");
+        words.put("knife", "корд");
+        words.put("fork", "чангак");
 
-        Button button = new Button(this);
-        button.setText("ҶУСТУҶӮ");
+        words.put("water", "об");
+        words.put("food", "хӯрок");
+        words.put("bread", "нон");
+        words.put("milk", "шир");
+        words.put("tea", "чой");
+        words.put("coffee", "қаҳва");
+        words.put("sugar", "шакар");
+        words.put("salt", "намак");
+        words.put("meat", "гӯшт");
+        words.put("rice", "биринҷ");
+        words.put("soup", "шӯрбо");
+        words.put("egg", "тухм");
+        words.put("cheese", "панир");
+        words.put("apple", "себ");
+        words.put("orange", "афлесун");
+        words.put("banana", "банан");
+        words.put("grape", "ангур");
+        words.put("lemon", "лимӯ");
+        words.put("potato", "картошка");
+        words.put("tomato", "помидор");
+        words.put("onion", "пиёз");
+        words.put("carrot", "сабзӣ");
+        words.put("cucumber", "бодиринг");
+        words.put("fruit", "мева");
+        words.put("vegetable", "сабзавот");
 
-        result = new TextView(this);
-        result.setTextSize(20);
-        result.setTextColor(Color.BLACK);
-        result.setPadding(10, 25, 10, 10);
+        words.put("sun", "офтоб");
+        words.put("moon", "моҳ");
+        words.put("star", "ситора");
+        words.put("sky", "осмон");
+        words.put("cloud", "абр");
+        words.put("rain", "борон");
+        words.put("snow", "барф");
+        words.put("wind", "шамол");
+        words.put("fire", "оташ");
+        words.put("earth", "замин");
+        words.put("air", "ҳаво");
+        words.put("waterfall", "шаршара");
+        words.put("river", "дарё");
+        words.put("lake", "кӯл");
+        words.put("sea", "баҳр");
+        words.put("mountain", "кӯҳ");
+        words.put("forest", "ҷангал");
+        words.put("tree", "дарахт");
+        words.put("flower", "гул");
+        words.put("grass", "алаф");
+        words.put("stone", "санг");
+        words.put("world", "ҷаҳон");
+        words.put("weather", "обу ҳаво");
+        words.put("summer", "тобистон");
+        words.put("winter", "зимистон");
+        words.put("spring", "баҳор");
+        words.put("autumn", "тирамоҳ");
 
-        layout.addView(title);
-        layout.addView(search);
-        layout.addView(button);
-        layout.addView(result);
+        words.put("car", "мошин");
+        words.put("bus", "автобус");
+        words.put("train", "қатора");
+        words.put("airplane", "ҳавопаймо");
+        words.put("road", "роҳ");
+        words.put("street", "кӯча");
+        words.put("bicycle", "велосипед");
+        words.put("motorcycle", "мотосикл");
+        words.put("taxi", "таксӣ");
+        words.put("truck", "мошини боркаш");
+        words.put("ship", "киштӣ");
+        words.put("boat", "қаиқ");
+        words.put("station", "истгоҳ");
+        words.put("airport", "фурудгоҳ");
+        words.put("ticket", "чипта");
+        words.put("travel", "сафар");
+        words.put("trip", "саёҳат");
+        words.put("driver", "ронанда");
+        words.put("passenger", "мусофир");
+        words.put("city", "шаҳр");
+        words.put("village", "деҳа");
+        words.put("country", "кишвар");
+        words.put("capital", "пойтахт");
+        words.put("map", "харита");
+        words.put("hotel", "меҳмонхона");
 
-        setContentView(layout);
+        words.put("big", "калон");
+        words.put("small", "хурд");
+        words.put("good", "хуб");
+        words.put("bad", "бад");
+        words.put("new", "нав");
+        words.put("old", "кӯҳна");
+        words.put("hot", "гарм");
+        words.put("cold", "сард");
+        words.put("fast", "тез");
+        words.put("slow", "оҳиста");
+        words.put("beautiful", "зебо");
+        words.put("happy", "хушбахт");
+        words.put("sad", "ғамгин");
+        words.put("easy", "осон");
+        words.put("difficult", "душвор");
+        words.put("strong", "қавӣ");
+        words.put("weak", "заиф");
+        words.put("young", "ҷавон");
+        words.put("rich", "бой");
+        words.put("poor", "камбағал");
 
-        button.setOnClickListener(v -> findWord());
+        words.put("eat", "хӯрдан");
+        words.put("drink", "нӯшидан");
+        words.put("go", "рафтан");
+        words.put("come", "омадан");
+        words.put("see", "дидан");
+        words.put("hear", "шунидан");
+        words.put("speak", "гап задан");
+        words.put("read", "хондан");
+        words.put("write", "навиштан");
+        words.put("learn", "омӯхтан");
+        words.put("teach", "омӯзондан");
+        words.put("work", "кор кардан");
+        words.put("play", "бозӣ кардан");
+        words.put("run", "давидан");
+        words.put("walk", "роҳ рафтан");
+        words.put("sit", "нишастан");
+        words.put("stand", "истодан");
+        words.put("sleep", "хобидан");
+        words.put("wake", "бедор шудан");
+        words.put("open", "кушодан");
+        words.put("close", "бастан");
+        words.put("buy", "харидан");
+        words.put("sell", "фурӯхтан");
+        words.put("give", "додан");
+        words.put("take", "гирифтан");
+        words.put("make", "сохтан");
+        words.put("do", "кардан");
+        words.put("know", "донистан");
+        words.put("think", "фикр кардан");
+        words.put("understand", "фаҳмидан");
+        words.put("remember", "дар хотир доштан");
+        words.put("forget", "фаромӯш кардан");
+        words.put("find", "ёфтан");
+        words.put("look", "нигоҳ кардан");
+        words.put("listen", "гӯш кардан");
+        words.put("ask", "пурсидан");
+        words.put("tell", "гуфтан");
+        words.put("help", "ёрӣ додан");
+        words.put("start", "оғоз кардан");
+        words.put("finish", "тамом кардан");
+        words.put("live", "зиндагӣ кардан");
+        words.put("love", "дӯст доштан");
+        words.put("like", "писанд кардан");
+        words.put("want", "хостан");
+        words.put("need", "лозим доштан");
+        words.put("use", "истифода кардан");
+        words.put("call", "занг задан");
+        words.put("wait", "интизор шудан");
+        words.put("stop", "истодан");
+        words.put("move", "ҳаракат кардан");
+        words.put("bring", "овардан");
+        words.put("send", "фиристодан");
+        words.put("receive", "гирифтан");
+        words.put("show", "нишон додан");
+        words.put("change", "иваз кардан");
+        words.put("try", "кӯшиш кардан");
+        words.put("win", "ғолиб шудан");
+        words.put("lose", "бохтан");
+        words.put("pay", "пардохт кардан");
+        words.put("save", "захира кардан");
+        words.put("read", "хондан");
+        words.put("draw", "расм кашидан");
+        words.put("sing", "суруд хондан");
+        words.put("dance", "рақс кардан");
+
+        words.put("one", "як");
+        words.put("two", "ду");
+        words.put("three", "се");
+        words.put("four", "чор");
+        words.put("five", "панҷ");
+        words.put("six", "шаш");
+        words.put("seven", "ҳафт");
+        words.put("eight", "ҳашт");
+        words.put("nine", "нуҳ");
+        words.put("ten", "даҳ");
+        words.put("hundred", "сад");
+        words.put("thousand", "ҳазор");
+        words.put("first", "якум");
+        words.put("second", "дуюм");
+        words.put("third", "сеюм");
+        words.put("last", "охирин");
+        words.put("many", "бисёр");
+        words.put("few", "кам");
+        words.put("more", "зиёдтар");
+        words.put("less", "камтар");
+
+        words.put("morning", "субҳ");
+        words.put("afternoon", "нисфирӯзӣ");
+        words.put("evening", "шом");
+        words.put("night", "шаб");
+        words.put("today", "имрӯз");
+        words.put("tomorrow", "фардо");
+        words.put("yesterday", "дирӯз");
+        words.put("day", "рӯз");
+        words.put("week", "ҳафта");
+        words.put("month", "моҳ");
+        words.put("year", "сол");
+        words.put("time", "вақт");
+        words.put("hour", "соат");
+        words.put("minute", "дақиқа");
+        words.put("second", "сония");
     }
 
-    void findWord() {
-        String word = search.getText().toString().trim().toLowerCase();
-
-        if (dictionary.containsKey(word)) {
-            result.setText(
-                "English: " + word +
-                "\nТоҷикӣ: " + dictionary.get(word)
-            );
-        } else {
-            result.setText("❌ Ин калима ёфт нашуд.");
-        }
+    public static String get(String word) {
+        return words.get(word);
     }
-
-    void createDictionary() {
-
-        dictionary.put("hello", "салом");
-        dictionary.put("goodbye", "хайр");
-        dictionary.put("yes", "ҳа");
-        dictionary.put("no", "не");
-        dictionary.put("please", "лутфан");
-        dictionary.put("thanks", "ташаккур");
-        dictionary.put("sorry", "бахшиш");
-        dictionary.put("welcome", "хуш омадед");
-        dictionary.put("friend", "дӯст");
-        dictionary.put("family", "оила");
-
-        dictionary.put("mother", "модар");
-        dictionary.put("father", "падар");
-        dictionary.put("brother", "бародар");
-        dictionary.put("sister", "хоҳар");
-        dictionary.put("son", "писар");
-        dictionary.put("daughter", "духтар");
-        dictionary.put("child", "кӯдак");
-        dictionary.put("man", "мард");
-        dictionary.put("woman", "зан");
-        dictionary.put("boy", "писар");
-
-        dictionary.put("girl", "духтар");
-        dictionary.put("teacher", "муаллим");
-        dictionary.put("student", "хонанда");
-        dictionary.put("school", "мактаб");
-        dictionary.put("class", "синф");
-        dictionary.put("book", "китоб");
-        dictionary.put("pen", "қалам");
-        dictionary.put("pencil", "қаламча");
-        dictionary.put("table", "миз");
-        dictionary.put("chair", "курсӣ");
-
-        dictionary.put("house", "хона");
-        dictionary.put("room", "ҳуҷра");
-        dictionary.put("door", "дар");
-        dictionary.put("window", "тиреза");
-        dictionary.put("bed", "кат");
-        dictionary.put("kitchen", "ошхона");
-        dictionary.put("garden", "боғ");
-        dictionary.put("city", "шаҳр");
-        dictionary.put("village", "деҳа");
-        dictionary.put("country", "кишвар");
-
-        dictionary.put("water", "об");
-        dictionary.put("food", "хӯрок");
-        dictionary.put("bread", "нон");
-        dictionary.put("milk", "шир");
-        dictionary.put("tea", "чой");
-        dictionary.put("apple", "себ");
-        dictionary.put("orange", "афлесун");
-        dictionary.put("banana", "банан");
-        dictionary.put("meat", "гӯшт");
-        dictionary.put("rice", "биринҷ");
-
-        dictionary.put("sun", "офтоб");
-        dictionary.put("moon", "моҳ");
-        dictionary.put("star", "ситора");
-        dictionary.put("sky", "осмон");
-        dictionary.put("cloud", "абр");
-        dictionary.put("rain", "борон");
-        dictionary.put("snow", "барф");
-        dictionary.put("wind", "шамол");
-        dictionary.put("fire", "оташ");
-        dictionary.put("earth", "замин");
-
-        dictionary.put("car", "мошин");
-        dictionary.put("bus", "автобус");
-        dictionary.put("train", "қатора");
-        dictionary.put("airplane", "ҳавопаймо");
-        dictionary.put("road", "роҳ");
-        dictionary.put("street", "кӯча");
-        dictionary.put("bicycle", "велосипед");
-        dictionary.put("phone", "телефон");
-        dictionary.put("computer", "компютер");
-        dictionary.put("internet", "интернет");
-
-        dictionary.put("big", "калон");
-        dictionary.put("small", "хурд");
-        dictionary.put("good", "хуб");
-        dictionary.put("bad", "бад");
-        dictionary.put("new", "нав");
-        dictionary.put("old", "кӯҳна");
-        dictionary.put("hot", "гарм");
-        dictionary.put("cold", "сард");
-        dictionary.put("fast", "тез");
-        dictionary.put("slow", "оҳиста");
-
-        dictionary.put("beautiful", "зебо");
-        dictionary.put("happy", "хушбахт");
-        dictionary.put("sad", "ғамгин");
-        dictionary.put("easy", "осон");
-        dictionary.put("difficult", "душвор");
-        dictionary.put("strong", "қавӣ");
-        dictionary.put("weak", "заиф");
-        dictionary.put("young", "ҷавон");
-        dictionary.put("rich", "бой");
-        dictionary.put("poor", "камбағал");
-
-        dictionary.put("eat", "хӯрдан");
-        dictionary.put("drink", "нӯшидан");
-        dictionary.put("go", "рафтан");
-        dictionary.put("come", "омадан");
-        dictionary.put("see", "дидан");
-        dictionary.put("hear", "шунидан");
-        dictionary.put("speak", "гап задан");
-        dictionary.put("read", "хондан");
-        dictionary.put("write", "навиштан");
-        dictionary.put("learn", "омӯхтан");
-    }
-                            }
+                  }
