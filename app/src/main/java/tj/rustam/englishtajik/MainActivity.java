@@ -176,4 +176,4 @@ public class MainActivity extends Activity {
         dictionary.put("write", "навиштан");
         dictionary.put("learn", "омӯхтан");
     }
-            }
+                            }
