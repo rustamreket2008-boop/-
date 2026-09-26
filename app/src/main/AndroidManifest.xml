@@ -1,5 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-<application android:theme="@style/AppTheme" android:label="English Тоҷикӣ" android:icon="@drawable/ic_launcher" android:allowBackup="true" android:supportsRtl="true">
-<activity android:name=".MainActivity" android:screenOrientation="portrait" android:exported="true">
-<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
-</activity></application></manifest>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="tj.rustam.englishtajik">
+<application android:label="Lugat 500">
+<activity android:name=".MainActivity" android:exported="true">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.LAUNCHER"/>
+</intent-filter>
+</activity>
+</application>
+</manifest>
