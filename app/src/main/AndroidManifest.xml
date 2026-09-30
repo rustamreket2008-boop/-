@@ -1,113 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F2F5FA">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:gravity="center_horizontal">
+    <application
+        android:allowBackup="true"
+        android:label="English - Тоҷикӣ"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- ПРОФИЛ -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-        <TextView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:gravity="center"
-            android:text="📖"
-            android:textSize="55sp"
-            android:background="#1565C0"
-            android:textColor="#FFFFFF"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="English - Тоҷикӣ"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#1565C0"
-            android:layout_marginTop="15dp"/>
+        </activity>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Луғати English - Тоҷикӣ"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginTop="5dp"/>
+    </application>
 
-        <!-- ҶУСТУҶӮ -->
-
-        <EditText
-            android:id="@+id/searchBox"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:hint="🔍 Калима нависед..."
-            android:textSize="17sp"
-            android:padding="15dp"
-            android:singleLine="true"
-            android:background="#FFFFFF"
-            android:layout_marginTop="30dp"/>
-
-        <Button
-            android:id="@+id/searchButton"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="🔎 Ҷустуҷӯ"
-            android:textSize="17sp"
-            android:layout_marginTop="12dp"/>
-
-        <!-- НАТИҶА -->
-
-        <TextView
-            android:id="@+id/wordText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#1565C0"
-            android:gravity="center"
-            android:layout_marginTop="30dp"/>
-
-        <TextView
-            android:id="@+id/translationText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Салом"
-            android:textSize="24sp"
-            android:textColor="#333333"
-            android:gravity="center"
-            android:layout_marginTop="10dp"/>
-
-        <!-- ТУГМАҲО -->
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="⭐ Дӯстдоштаҳо"
-            android:textSize="16sp"
-            android:layout_marginTop="30dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="📚 Ҳамаи калимаҳо"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="ℹ️ Дар бораи барнома"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp"/>
-
-    </LinearLayout>
-
-</ScrollView>
+</manifest>
