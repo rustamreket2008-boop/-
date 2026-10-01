@@ -13,7 +13,14 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+    }
 }
 
 dependencies {
+    implementation("androidx.appcompat:appcompat:1.7.0")
 }
